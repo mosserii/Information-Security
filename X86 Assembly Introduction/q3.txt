@@ -1,0 +1,6 @@
+**Concatenate(D,S) if D, S represent 2 strings.
+
+1) The program receives 2 arrays D and S.
+2) it looks for the end of D or an element in D that equals 0 and then copies non-zero elements (in-order) from S to D until it reaches the end of S or it encounters a 0 element in S, it copies one 0 to the end of D.
+
+

@@ -1,0 +1,2 @@
+we want to change instruction "jnz" (opcode 75) in line 1739 (0x6CB) that send invalid messages to print invalid and return 1.
+we change it to instruction "jmp" (opcode 235) and now all messages (valid or invalid) will be sent to valid node and print valid and retrurn 0.

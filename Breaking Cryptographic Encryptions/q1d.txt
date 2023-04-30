@@ -1,0 +1,4 @@
+Bruth force means to try all possible keys (combinations of all bytes of size key_length).
+we also pad from left with zeros keys that are of size that is smaller than key_length.
+then, we decrypt the given cipher with the current key and then we call the score function from part C to score this possible plaintext (deciphered text).
+finally we return the plaintext that got the highest score - probably the plaintext and for sure a text in English.

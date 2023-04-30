@@ -1,0 +1,2 @@
+we want to change returned value of invalid messages (1) to (0).
+therefore we change the offset (01) to (00) in line 1758 (0x6DE) : MOV EAX, 0

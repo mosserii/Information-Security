@@ -1,0 +1,7 @@
+this part, I made an .asm file that is similar to the one we saw in class, but I avoided writing 0 because strcat would stop and the mission would fail.
+therefore, instead of moving 0 into a register, I xored a register with itself.
+instead of writing 0x0B, I subtracted 2 big non zero numbers.
+
+then, by using gdb, I could identify the adddresses of $esp, and where I want to start the shellcode (because I saw three 'A' so I knew that I should start with three NOPs).
+
+then after the shellcode, I padded with NOPs and then I overrode the return address with the address of the beginning of the shellcode.

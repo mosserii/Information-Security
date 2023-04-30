@@ -1,0 +1,5 @@
+I noticed that e, the "encryption exponent" is 3 and the credit card is a 8-9 digits number and n is a huge number.
+therefore, credit_card^e < n so :
+credit_card^e (mod n) = credit_card^e
+
+Now I can simply raise encrypted_credit_card to the power of 1/e and get the real credit card number.

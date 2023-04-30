@@ -1,0 +1,5 @@
+In order to give a score to a text in English, we want to first rule out possible text which is not ASCII letters  (if letter not in string.printable).
+then, we go in a loop over every letter in the text and count the frequency of each english letter.
+by using a python dict for english letter frequency (taken from : https://gist.github.com/pozhidaevak/0dca594d6f0de367f232909fe21cdb2f), I could compare between the letter frequency in text and in english.
+for each english letter, we multiply : its weight in the english language (based on this github dict) X its frequency in our text.
+therefore a text with a better score is more plausible to be a normal English text - the secret!

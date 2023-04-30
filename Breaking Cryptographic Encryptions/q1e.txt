@@ -1,0 +1,8 @@
+The main "key" for this part is to notice that by definition of encryption in this assignment,
+letter (i) and letter (i+key_length) in cipher were encrypted with the same byte of KEY.
+Therefore, we can split the cipher into pieces such that in each piece, all the elements were encrypted with the same byte of KEY.
+
+Then, for each piece we look for the byte that decrypting the elements in that piece will get the highest score 
+and then putting all the bytes (in order, obviously) together into one KEY.
+
+finally, we can just decrypt the cipher with that KEY.

@@ -1,0 +1,2 @@
+There are only 10000 options for a possible PIN Code (0000-9999) so I try all possibilities :
+encrypted_PIN = PIN_Code^e (mod n) therefore I can use the "fast_exponent_and_modulus" function and find a PIN_Code that gets me the same encrypted_PIN to send to the server.

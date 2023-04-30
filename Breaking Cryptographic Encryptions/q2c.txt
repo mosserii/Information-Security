@@ -1,0 +1,22 @@
+The function "verify_server_approval" in ATM 
+        returns true
+            iff
+    (server_response.status == ATM.CODE_APPROVAL) &&
+    verify_number({e,n}, server_response.status, server_response.signature) returns true.
+
+
+
+
+
+"verify_number({e,n}, server_response.status, server_response.signature)" 
+        returns true
+            iff
+        signature ^ e (mod n) == status
+
+
+In order to pass this verification test, we have to get server_response.status == ATM.CODE_APPROVAL == 1 (otherwise the
+first condition will fail, and therefore we want signature ^ e (mod n) == 1
+we can get it by setting signature to 1 (1^e == 1) and then we get TRUE!!!!!
+
+
+

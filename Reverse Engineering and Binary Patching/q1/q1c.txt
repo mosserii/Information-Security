@@ -1,0 +1,3 @@
+this time we will do ONE for loop iteration (buffer_zero = 1).
+we will change data[2] to : buffer_one ^ 120 and therefore in the iteration we will get : x = buffer_one ^ 120 ^ 120 
+and we know that xor is reversible when xoring twice with the same value and the result will be x == buffer_one

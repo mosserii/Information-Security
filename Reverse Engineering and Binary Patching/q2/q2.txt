@@ -1,0 +1,8 @@
+I found two deadzones that contains nop instructions, one big and one small.
+then I counted the virtual adresses of each deadzone and places we want to jump to (before/after patch or printf).
+from the small patch we jump to the big patch with the current line and then in the big patch we check if it contains #!, if it does : we call _system and then jump after printf
+if it does not : we just jump back after the small patch and we print it.
+
+I also added that if we arrived to patch not from the small patch so we need to jump right after the big patch (like the program before we hacked it).
+
+I calculated the number of lines between patches and addresses so I could relatively jump to these addresses.

@@ -1,0 +1,2 @@
+I noticed that there's no check about the size of the message and therefore we can do a classic stack overflow.
+the buffer is only of size 1024 and if we set a message of a bigger size (i.e 2048), so the return address will be overridden and there will be a segmentation fault.

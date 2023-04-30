@@ -1,0 +1,2 @@
+the program reads 2 first chars of file in path : buffer_zero, buffer_one.
+then, it XORs in a loop (buffer_zero iterations) the chars of the file with the value of 120 (78h) and at the end checks if the xor result equals buffer_one.

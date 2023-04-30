@@ -1,0 +1,30 @@
+encode : 
+I just followed the simple instructions in the assignment.
+
+
+get_decoder_code : 
+in order to get 0xff value into a register without writing it explicitly, I used a trick:
+                  #xff_ value :##PUSH 0
+                  #POP EBX
+                  #DEC EBX ->> EBX = 0xFFFFFFFF ->> BL = 0xff
+then in a loop, I went over every index in the list and xored with 0xff.
+in order to go from one index to another in assembly, I kept the prev index and calculated how many "nop-like" (here I did INC EAX) instructions needed and filled the decoder code with them and that would change EAX to the exact adress we need to xor with :).
+
+
+get_ascii_shellcode : 
+like in the image in the assignment, we want eax to point at the begining of the encoded shellcode and therefore we can take esp - 4 - (length of shellcode) and put in eax.
+therefore I did : push esb, pop eax and then dec eax (4 + length of shellcode times).
+I returned the operations that direct eax to the begining of the encoded shellcode, the decoder code and the encoded shellcode itself.
+
+
+get_payload : 
+kind of the same as get_payload in q2.py.
+this time the "nop operation" was DEC EBX, we can do that because in the decoder_code anyway we put 0xFFFFFFFF in EBX so it makes no harm. 
+here again I put nops slides from both sides of the shellcode.
+
+
+
+
+
+
+

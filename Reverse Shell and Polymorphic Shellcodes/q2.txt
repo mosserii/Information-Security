@@ -1,0 +1,15 @@
+Firstly, I found the addresses of the functions in dummy using IDA PRO. 
+then, I made the shellcode to be like a client connecting to a server (socket, connect) and then changing the STDIN,STDOUT and stderr to point to sockfd, while for connect I created a struct and calculated in python what are the hex values of : htons(1337), inet_addr("127.0.0.1"), AF_INET. at the bottom of the shellcode I called execv with "bin bash" with the classic trick using the CALL operation.
+
+I used gdb to find the return address to override, and calculated the exact size of payload needed.
+
+For an unknown reason, I couldn't make it work with a nop silde before the shellcode only, so I put 2 slides : 1 before the shellcode and 1 after.
+
+
+
+
+
+
+
+
+
