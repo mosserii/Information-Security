@@ -19,10 +19,7 @@ I returned the operations that direct eax to the begining of the encoded shellco
 
 get_payload : 
 kind of the same as get_payload in q2.py.
-this time the "nop operation" was DEC EBX, we can do that because in the decoder_code anyway we put 0xFFFFFFFF in EBX so it makes no harm. 
-here again I put nops slides from both sides of the shellcode.
-
-
+this time the "nop operation" was DEC EBX, we can do that because in the decoder_code anyway we put 0xFFFFFFFF in EBX.
 
 
 
