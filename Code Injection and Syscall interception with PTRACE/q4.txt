@@ -1,0 +1,3 @@
+Almost a copy of q2, q3 but this time, I checked the value of eax register (that stores the type of syscall) and if it was 3 (read syscall), I just replaced the value of edx register (that stores the len of the read systemcall to 0).
+
+I used 2 times ptrace syscall, first to stop, then second to run the same syscall with different value stored in edx, also used : PTRACE_GETREGS, and PTRACE_SETREGS

@@ -1,0 +1,7 @@
+Almost a copy of q2 but this time, I found the address of got using "objdump -D ./antivirus -M intel --section=.plt".
+
+I used the function "int check_if_live_patch(char* path)"
+instead of :        "int check_if_virus(char* path)"
+as one can see, they have the same signature (except from name).
+
+besides that, the idea is really similar to q2.

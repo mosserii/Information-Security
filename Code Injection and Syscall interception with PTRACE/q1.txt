@@ -1,0 +1,2 @@
+I used the cmd "pgrep antivirus" in order to find the pid of the antivirus' process. and after sending this payload, I got in return the "product" so I just decoded it and got the process' pid!
+then, in q1.py I sent a kill -9 signal to that same pid.

@@ -1,0 +1,6 @@
+I found the address of "chedck_if_virus" using gdb on the antivirus executable, then with the cmd : b "chedck_if_virus", it showed the addr of this function.
+
+In q2.c, I used the code from recitation to attach and dettach from the process, and I put in desired location (firstly it was just a fake address) the instr. : int MOV_EAX_0 = 0x000000b8;
+                                  int RET = 0xc300;
+                                  
+then, in q2.py I found the locations where I want to write the real pid and address of "check_if_virus" and then I overrode (binary patching) the fake address that I put in q2.c 
