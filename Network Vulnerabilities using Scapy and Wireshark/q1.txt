@@ -1,0 +1,15 @@
+First of all, I looked at the decoded packet that we captured before (with the username and password), in order to understand how this kind of packets look like.
+
+
+parse_packet : 
+here I used what I said before, so I figuered out that the website name sits in a row called "HOST: " and that it is a login if a row called "Referer: " ends with "login/". therefore I extracted this lines and if they all correspond with an operation of getting to the login page of the course website, I got the actual values using urlparse.
+
+urlparse.parse_qs(payload_list[-1]) turns the last line (where the username and password sits) into a dictionary. 
+so I just took the values and returned them :)
+
+
+
+
+packet_filter :
+
+if the dport (destination port) is 80, it means that the client try to reach HTTP port of the server.

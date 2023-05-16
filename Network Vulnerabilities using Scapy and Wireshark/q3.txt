@@ -1,0 +1,21 @@
+is_packet_to_original_gateway : 
+
+from the hint I figured out that I need to check if the packet was sent to the  gateway MAC address of the victim and that it was not us who sent it (not our_IP).
+
+
+is_stolen_packet :
+I checked if the packet dest_IP is not for us but the MAC_dest is still ours, which means it is a packet that was not meant to us but was redirected to us.
+
+ 
+
+create_poison : 
+arp_packet = S.ARP(
+            op=2,  # 2 for ARP reply
+            psrc=self.gateway_ip,  # Gateway_ip - Attacker says it is him
+            hwdst=victim_packet[S.Ether].src,  # Victim's MAC address
+            pdst=victim_packet[S.IP].src  # Victim's IP address
+        )
+in psrc I put the Gateway_ip, meaning that attacker says : "I'm Gateway_ip, my MAC is our_MAC" -> the mac addr of the attacker will be connected to the Gateway_ip.
+hwdst, pdst are there so we will only poison the victim and not everyone on the web.
+        
+ 

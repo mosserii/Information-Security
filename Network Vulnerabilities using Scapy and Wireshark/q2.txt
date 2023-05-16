@@ -1,0 +1,11 @@
+As in q1, I checked if there is a try to reach the course website. 
+
+if there is, I created a packet to send back (switches between src & dst IP and ports). also i added that the ack back will be added with the size of the packet, meaning that the server received the client request to connect ot the course website.
+ 
+I added the flags FA : finish and ack, meaning that : 
+
+F = When the receiving party receives a TCP segment with the FIN flag set, it acknowledges the FIN and enters the TCP connection termination process.
+A = The ACK flag is used to acknowledge the receipt of data. When closing a TCP connection, the ACK flag is set to acknowledge the receipt of the FIN segment from the other party.
+
+and finally I put the IP and TCP segments together with the RESPONSE payload.
+
