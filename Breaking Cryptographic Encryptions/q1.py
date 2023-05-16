@@ -18,7 +18,7 @@ class RepeatedKeyCipher:
 
     def decrypt(self, ciphertext: bytes) -> str:
         """Decrypts a given ciphertext string and returns the plaintext."""
-        return (RepeatedKeyCipher.encrypt(self, ciphertext.decode('latin-1'))).decode('latin-1')  # xor over xor gives plaintext todo check if decode ee
+        return (RepeatedKeyCipher.encrypt(self, ciphertext.decode('latin-1'))).decode('latin-1')  # xor over xor gives plaintext
 
 
 
