@@ -15,7 +15,7 @@ arp_packet = S.ARP(
             hwdst=victim_packet[S.Ether].src,  # Victim's MAC address
             pdst=victim_packet[S.IP].src  # Victim's IP address
         )
-in psrc I put the Gateway_ip, meaning that attacker says : "I'm Gateway_ip, my MAC is our_MAC" -> the mac addr of the attacker will be connected to the Gateway_ip.
+In psrc I put the Gateway_ip, meaning that attacker says : "I'm Gateway_ip, my MAC is our_MAC" -> the mac addr of the attacker will be connected to the Gateway_ip.
 hwdst, pdst are there so we will only poison the victim and not everyone on the web.
         
  

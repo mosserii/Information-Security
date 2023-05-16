@@ -1,4 +1,4 @@
-this part, I made an .asm file that is similar to the one we saw in class, but I avoided writing 0 because strcat would stop and the mission would fail.
+In this part, I made an .asm file that is similar to the one we saw in class, but I avoided writing 0 because strcat would stop and the mission would fail.
 therefore, instead of moving 0 into a register, I xored a register with itself.
 instead of writing 0x0B, I subtracted 2 big non zero numbers.
 

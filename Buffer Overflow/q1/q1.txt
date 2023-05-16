@@ -1,4 +1,4 @@
 I found that I can exploit the buffer overflow vulnerability in this SUDO program : 
 the main of the program checks if thelen of the password is bigger than 10 but actually it should check if it is bigger or equal to 10 because with a password of length 10 we get a buffer overflow:
 
-the function check_password put vriable auth just before "buff" and therefore as one can see in IDA, auth is located just above buff and therefore, when we concat buff (after putting 11 elements in it + NULL terminator), with a password of size 10, we run over auth and therefore, if the last char of password of length 10 is '1', we get that auth == 1 and the check of strcmp does not matter, we get authintecated.
+the function check_password put variable auth just before "buff" and therefore as one can see in IDA, auth is located just above buff and therefore, when we concat buff (after putting 11 elements in it + NULL terminator), with a password of size 10, we run over auth and therefore, if the last char of password of length 10 is '1', we get that auth == 1 and the check of strcmp does not matter, we get authintecated.

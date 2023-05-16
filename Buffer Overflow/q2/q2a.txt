@@ -1,4 +1,4 @@
-In this question, there is no check of the password length at all and therefore one can use the vulnerabillity of strcat.
+In this question, there is no check of the password length at all and therefore one can use the vulnerability of strcat.
 again I caused a stackoverflow, running from buff to what is on top of it ($esp etc.).
 because Buff is of length 65 and is declared at the beginning of sudo, it sits just under the return address etc.
 

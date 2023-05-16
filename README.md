@@ -4,7 +4,7 @@ Check the README files of each exercise for a more detailed explanation.
 #### **`The Course exercises are solved on a Debian Linux 32-bit VM.`**
 
 ### Exercises
-1. Introduction to x86 assembly.
+1. x86 Assembly Introduction.
 2. Breaking Cryptographic types (XOR or RSA) of Encryption.
 3. Reverse Engineering and Binary Patching
 4. Buffer Overflow
