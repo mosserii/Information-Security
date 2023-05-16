@@ -1,0 +1,22 @@
+I made the stack look like that :
+
+My_string
+Loop begin addr    _____    
+POP esp         (for jumping to loop_begin)
+My_string_addr 
+POP edx         (for skipping 4 bytes)
+PUTS address    (loop begin)  
+PUTS address
+POP ebp         (code begin)
+
+
+
+a)The loop works! after we call puts because :
+when you look at the disas of puts, one can see that ebp is push on the stack, now because we moved the PUTS address to ebp so we will get PUTS address in the beginning of the loop, exactly as we want and no override has actually occured.
+(0xb7b7a460 <+0>:	push   %ebp)
+
+b)Skipping 4-bytes is necessary because if we would not do it, after calling puts, we would jump to My_string_addr, and would never go back to the loop. 
+
+c)I included my string just after the JUMP_back to the beginning of the loop, that way I could write My_string without fear that the loop will execute/run over it.
+the string is just concatenated with the shellcode.
+I encoded my_string to bytes so it can be added to shellcode.

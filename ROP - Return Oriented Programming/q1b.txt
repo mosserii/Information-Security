@@ -1,0 +1,10 @@
+I used the demo code from lecture 5.
+In order to find where to put the return address, I used the core dump that was created in q1a. finding it was at offset of 135 bytes from buffer+12.
+
+In order to find the address of system in libc, I used gdb : break main, run, print system.
+
+In order to find the address of "/bin/sh" in libc, I used gdb find.
+
+for now, in the return address FROM system, I put 4 bytes of 'a'
+
+

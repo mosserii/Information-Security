@@ -1,0 +1,1 @@
+I just passed 200 occurences of "0x41" and that would run over the return address and will cause the sudo program to crash and produce a core dump :)

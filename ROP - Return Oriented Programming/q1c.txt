@@ -1,0 +1,7 @@
+basically the same as q1b.
+
+In order to find the address of exit in libc, I used gdb : break main, run, print exit.
+
+
+then, I returned : 135 bytes for ofsset, system_address, exit_address, 
+"/bin/sh"_address, 0x42
