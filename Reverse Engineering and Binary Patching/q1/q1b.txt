@@ -1,4 +1,4 @@
-we noticed that if buffer_zero equals 0 so we will not enter the for loop and therefore the message will be valid if buffer_one == 120
+We noticed that if buffer_zero equals 0 so we will not enter the for loop and therefore the message will be valid if buffer_one == 120
 the changes :
 buffer_zero = 0
 buffer_one = 120
