@@ -12,5 +12,9 @@ Check the README files of each exercise for a more detailed explanation.
 6. ROP - Return Oriented Programming
 7. Code Injection and Syscall interception with PTRACE
 8. Network Vulnerabilities using Scapy and Wireshark
+9. Firewalls and Stealth communication
+10. Logical Vulnerabilities
+11. Web Vulnerabilities
+
 
 Languages : Python, C, x86 Assembly.
