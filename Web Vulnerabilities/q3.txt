@@ -1,0 +1,25 @@
+Q3 - Show a kitty picture once (using XSS and JAVASCRIPT onload attribute)
+** remember that you can use onerror attribute, causing an error because there is no such username/image.
+
+I used the vulnerability that I can JS code inside an attribute, so I used "onload" attribute.
+
+Posting an image of a cute cat with a JS code that will check if it wasn't seen already (!window.localStorage['seenKitty']), and shows it
+(using .style.display - "block"), then mark that it was seen (true).
+
+IF it was already seen (window.localStorage['seenKitty'] === true), so it make it invisble (using .style.display - "none").
+
+the window.localStorage['seenKitty'] entry is whatever we choose it to be, so at first it won't even exist (===null) and then after the first time,
+it will equal true.
+
+
+SOLUTION:
+#general-spam
+<img id="myKitty" src="https://w7.pngwing.com/pngs/174/600/png-transparent-cat-animal-lovely-cat.png" style="color: green" onload="javascript:
+if (!window.localStorage['seenKitty']) {
+    document.getElementById('myKitty').style.display = 'block';
+    window.localStorage['seenKitty'] = true;
+} else {
+     document.getElementById('myKitty').style.display = 'none';
+}"/>
+
+

@@ -1,0 +1,4 @@
+generate_syn_packets : just create a SYN TCP/IP packet to the requested destination IP and ports.
+
+analyze_scan : categoraizing which case the current packet answers to : if we did not get an answer from : FILTERED
+, if we did get an aswer and the flags are "RA" : CLOSED, otherwise it is OPEN.

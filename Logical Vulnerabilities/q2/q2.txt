@@ -1,0 +1,11 @@
+I created the malicious serialized input using a reduce function in a new class and the function pickle.dumps()
+
+then, run.py will read the input and will deserializing it using the function pickle.loads() and
+this will cause the echo hacked to happen.
+
+Whenever you try to pickle (serialize) an object, there will be some properties
+that may not serialize well. For instance, an open file handle (open resource),
+ pickle won’t know how to handle the object and will throw an error.
+ You can tell the pickle module how to handle these types of objects natively within a class directly
+ by overriding “reduce”. Here we used this same “reduce” directly
+ for inserting our malicious command instead of telling pickle how to handle the de-serialization.

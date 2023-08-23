@@ -15,10 +15,7 @@ LIBC_BIN_SH = 0xb7c96338
 # Memory address of the `system` function. This function is not in the PLT of
 # the program, so you will have to find it's address in libc. Use GDB :)
 # USE THIS IN `q1c.py`.
-SYSTEM = 0xb7b4f040 #0xb7b1ec66
-                    #0xb7c9671e
-                    #0xb7c9678b
-                    #0xb7b4f040
+SYSTEM = 0xb7b4f040
 
 
 # Memory address of the `exit` function. This function is also not in the PLT,

@@ -1,0 +1,6 @@
+Q3 - len 0 check leads to true auth
+I noticed that in run.py, it checks if user[:username_end] == data[:username_end]
+and the problem is that we can affect username_end size, if we set it to 0 so
+every string of size 0 is equals to a string of size 0.
+therefore, we can pass ::echo hacked as input and pass the validation check,
+so it will execute the echo hacked command and print "hacked" without crashing.

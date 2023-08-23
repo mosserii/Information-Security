@@ -1,0 +1,7 @@
+Q1 - inject your own code
+I just noticed that the function validate_script in run.py is using eval
+and therefore it can execute input from user, so I used os.system('echo hacked')
+in order to print hacked
+
+data = eval(data) # here is the vulnerability
+

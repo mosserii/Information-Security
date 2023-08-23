@@ -39,7 +39,8 @@ def get_tcp_injection_packet(packet):
         ip_packet = S.IP(src=packet[S.IP].dst, dst=packet[S.IP].src) # switching src and dst from original packet
         ack_number = packet[S.TCP].seq + len(raw)
         seq_number = packet[S.TCP].ack
-        tcp_segment = S.TCP(sport=packet[S.TCP].dport, dport=packet[S.TCP].sport, flags='FA', seq=seq_number, ack=ack_number)
+        tcp_segment = S.TCP(sport=packet[S.TCP].dport, dport=packet[S.TCP].sport, flags='FA',
+                            seq=seq_number, ack=ack_number)
         res = ip_packet/tcp_segment/RESPONSE
 
         return res

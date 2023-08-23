@@ -1,0 +1,2 @@
+
+We want to return that the port is open on every SYN packet we recieve! so we just get the sender's IP and port, and answer him with the relevant flag SA so he think this port is open!

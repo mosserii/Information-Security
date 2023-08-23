@@ -1,0 +1,13 @@
+Q4 - he is just looking for a pattern (maybe there are 5 of them) so we can put twice 2
+I noticed that because Bob does not know JSON, they read the script in a different way!
+
+{"hola \"command": "echo hacked", "command": "echo cool",
+"signature": "007152ab1a65e9e864928d0f5cc6f47e8ce6217c09f7e7518d3d15f901e33df7e4bd760e2538929bdf2c5bf710b2babbcb2f268f458551ecbee78df22f3bb039696a2fccf58ccdeeb0c235e36593aa4b8be3d62e4ae6a59f6aebf78e3aec5b1685672bff191969731a096fa8f9ef29926bbee303d0673482410a25d00c46bdc1"}
+
+Bob is using re.search(r'"command": "(.*?)"', data).group(1)
+and therefore, I created another key:value in the script in JSON so that its key
+will be slightly different then command. Alice will read only from "command" key in the JSON script,
+ and she will compare the "echo cool" with its correct signature, without noticing our new key:value.
+while Bob will still find our malicious key instead of the normal "command" key
+and think it is from the pattern : "command": "(.*?)", therefore he will execute it.
+

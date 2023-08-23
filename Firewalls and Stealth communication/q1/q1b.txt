@@ -1,0 +1,7 @@
+DATA STRUCTURE : 
+I made a dict IP_syn_times  : <key=IP, value=[time entries]>
+
+Firstly, I made few checks if the packet is not from an alreay blocked IP address or not a SYN packet..
+
+Then, I checked what is the oldest SYN packet that arrived in the WINDOW time before the current packet(60 seconds, packets that are outside that window will be deleted - they arrived more than 60 seconds before so it is okay).
+If the number of packets (len of value of key=src_IP in dict) is bigger than 15, we block this IP!

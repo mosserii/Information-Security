@@ -1,0 +1,18 @@
+Q5 - using subprocess because it takes a lot of time TOCTTOU
+
+Sometimes too safe is not safe...
+Alice made the verify function do 1000000 iterations of hashing which takes
+a loooooot of time (15 seconds at least) so we can send it the actual file (example.json) that will be validated,
+and once we know that in run.py, we arrived already to the verify function (say after 3 seconds),
+we can change the json file dynamically!!
+
+I created a subprocess that will RUN run.py, and then after 3 seconds,
+ with the main process, I changed the example.json file so that his value to command key will be "echo hacked".
+
+
+#I change the example.json file so if you want to rerun it, you should change back :
+"command": "echo hacked" to "command": "echo cool" 
+
+#maybe it would not work on a super computer (because we wait 3 seconds),
+so we can tailor it to each computer/try many different times.
+

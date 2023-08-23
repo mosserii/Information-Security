@@ -1,0 +1,11 @@
+Q2 - HIDE MESSAGE IN 3 RESERVED BITS OF TCP PACKET
+I broke the message into triplets so that each letter will be 3 packets (9 bits),
+then I sent each packet as a SYN/ACK (flags "Sa") and seq = current packet number in the sequence.
+I put the 3 bits (broken_message[i]) in the reserved bits using reserved=int(broken_message[i], 2) (in binary).
+
+then for Julia, I sniffed each packet and filtered them such that if they are not coming
+from winston (port 65000) or not a SYN ACK packets, Julia would ignore them.
+Then, each letter would sit in 3 following places in the dict of triples (i,i+1,i+2).
+We stop when the number of different SYN ACK packets received equals the ack value that winston sends in the packets.. 
+
+

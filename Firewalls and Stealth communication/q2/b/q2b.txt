@@ -1,0 +1,3 @@
+I made Winston take his message, pad it with PKCS7(128) and then encrypt it with AES and only then send it to Julia so no one will see the word love, except for her.
+
+I made Julia take the payload she got, decrypt it with AES and then unpad it with PKCS7(128) [which is the reverse set of operations than what Winston did]. then Julia will see the love message he sent to her.

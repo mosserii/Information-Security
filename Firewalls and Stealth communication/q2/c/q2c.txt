@@ -1,0 +1,1 @@
+I just called the shannon entropy function and if the return value from it is bigger than 3 or the condition from q2a is true, I added this sender's IP to the set.

