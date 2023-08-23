@@ -9,6 +9,7 @@ this line decodes the cookie, and then uses :
             (login,)
 
 
+
 Therefore, I created a cookie for edward using the inverse command so that login will equal "edward":
 base64.b64encode("edward".encode()).decode()
 
